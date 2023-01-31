@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.users-box {
+    background-color: gainsboro;
+    width: 600px;
+}
+
+.user-block {
+    flex-direction: column;
+    background-color: #bbb9de;
+    margin: 5px 10px;
+    padding: 10px;
+
+}
+
+.address-block {
+
+}

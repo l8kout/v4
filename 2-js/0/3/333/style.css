@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 1200px;
+    flex-wrap: wrap;
+    height: 5000px;
+    justify-content: center;
+}
+
+.wrap {
+    width: 200px;
+    height: auto;
+    background-color: #bbb9de;
+    margin: 5px;
+}
+
+.post-card {
+    padding: 20px;
+
+}
