@@ -29,7 +29,7 @@
 // побудувати структуру по шаблону
 // Масив:
 //
-//     let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
+//    let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 //
 // ШАБЛОН:
 //     <ul>
@@ -46,13 +46,12 @@
 //
 // let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 //
-// for (const listEl of listOfItems) {
-//     document.write(`<div>
-//     <ul>
-//     <li>${listEl}</li>
-//     </ul>
-//     </div>`);
-// }
+//     document.write(`<ul>`);
+//     for (const listEl of listOfItems) {
+//         document.write(`<li>${listEl}</li>`);
+//     }
+//     document.write(`</ul>`);
+
 
 // -----------------------------------------------
 
