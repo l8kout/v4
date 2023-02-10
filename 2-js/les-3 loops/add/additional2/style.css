@@ -1,0 +1,22 @@
+body {
+    margin: auto;
+    width: 1000px;
+}
+
+.users-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 1500px;
+
+}
+
+.user-block {
+    background-color: #abceec;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+
+}

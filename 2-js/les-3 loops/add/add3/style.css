@@ -1,0 +1,15 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    height: 5000px;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.post-card {
+    background-color: #bbb9de;
+    width: 200px;
+    margin: 5px;
+    padding: 10px;
+}
