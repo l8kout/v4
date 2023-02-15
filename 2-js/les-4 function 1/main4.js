@@ -179,6 +179,31 @@
 // u1.setName('Did');
 // console.log(u1.getName());
 
+function userCreator(name) {
+    let user = {name: name}
+    return {
+        getName() {
+            return user.name;
+        },
+        setName(name) {
+            if (typeof name === 'string') {
+                user.name = name;
+            } else {
+                console.log('wow');
+            }
+        },
+    }
+}
+
+let u1 = userCreator();
+u1.setName('fof');
+console.log(u1.getName());
+u1.setName('dod');
+console.log(u1.getName());
+
+
+
+
 
 
 
