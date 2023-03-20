@@ -23,7 +23,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
             button.onclick = function (e) {
                 e.preventDefault();
 
-                location.href = `../2-user/user-details.html`;
+                location.href = `../2-user/user-details.html?data=${JSON.stringify(user)}`;
             };
 
             box.append(p, button);
