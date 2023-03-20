@@ -1,25 +1,22 @@
  // Всі функції повинні бути описані стрілочним типом!!!!
  //  - створити функцію яка приймає три числа та виводить найменьше. (Без Math.min!)
 //
- let a = prompt('введи число');
- console.log(a);
-let b = prompt('введи число');
- console.log(b);
-let c = prompt('введи число');
- console.log(c);
-
- if (a < b && a < c) {
-  console.log('найменше число' + a);
-     } else if (b < a && b < c) {
-  console.log('найменше число' + b);
-     } else if (c < a && c < b) {
-  console.log('найменше число' + c);
- } else {
-  console.log('спробуй ще');
- }
-
-
-
+//  let a = prompt('введи число');
+//  console.log(a);
+// let b = prompt('введи число');
+//  console.log(b);
+// let c = prompt('введи число');
+//  console.log(c);
+//
+//  if (a < b && a < c) {
+//   console.log('найменше число' + a);
+//      } else if (b < a && b < c) {
+//   console.log('найменше число' + b);
+//      } else if (c < a && c < b) {
+//   console.log('найменше число' + c);
+//  } else {
+//   console.log('спробуй ще');
+//  }
 
 
 //  let minNum = (a, b, c) => {

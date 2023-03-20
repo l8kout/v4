@@ -30,9 +30,13 @@
 
 // 3 - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre, authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.
 //
-// let book1 = {title: 'book1', pageCount: 10, genre: 'roman', authors: [name = 'pavlo', age = 11]};
-// let book2 = {title: 'book2', pageCount: 22, genre: 'picturebook', authors: [name = 'petro', age = 22]};
-// let book3 = {title: 'book3', pageCount: 33, genre: 'comics', authors: [name = 'prokip', age = 33]};
+// let book1 = {title: 'book1', pageCount: 10, genre: 'roman', authors: [{name: 'pavlo', age: 11}]};
+// let book2 = {title: 'book2', pageCount: 22, genre: 'picturebook', authors: [{name: 'petro', age: 22}]};
+// let book3 = {title: 'book3', pageCount: 33, genre: 'comics', authors: [{name: 'prokip', age: 33}]};
+//
+// console.log(book1);
+// console.log(book2);
+// console.log(book3);
 
 // 4 - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
 //
@@ -152,13 +156,13 @@
 // 10 - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //         за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
 
-let x = ' ';
-
-if (typeof x === false) {
-    x = "default";
-    console.log(x);
-}
-
+// let x = ' ';
+//
+// if (typeof x === false) {
+//     x = "default";
+//     console.log(x);
+// }
+//
 
 
 // 11 - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".

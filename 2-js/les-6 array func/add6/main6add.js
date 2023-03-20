@@ -42,6 +42,9 @@
 // let n2 = 'Ron Whisley'
 // let n3 = 'Hermione Granger'
 //
+// let n1 = 'Harry..Potter';
+// let n2 = 'Ron---Whisley';
+// let n3 = 'Hermione__Granger';
 // let foo = (str) => {
 //     if (str.includes('..')) {
 //         return str.replace('..', ' ');

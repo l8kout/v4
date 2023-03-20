@@ -1,4 +1,4 @@
-// - Знайти та вивести довижину настипних стрінгових значень
+ // - Знайти та вивести довижину настипних стрінгових значень
 // 'hello world', 'lorem ipsum', 'javascript is cool'
 // let a = 'hello world';
 // let b = 'lorem ipsum';
@@ -178,25 +178,27 @@
 // console.log(cards.filter(value => value.cardSuit === 'diamonds'));
 // - всі трефи від 9 та більше
 
-// let red = cards.reduce((previousValue, currentValue) => {
-//     if (currentValue.value >= 9) {
-//         previousValue.filtered.push(currentValue);
-//     } else if (currentValue.value === 'Joker') {
-//         previousValue.filtered.push(currentValue);
-//     } else if (currentValue.value === 'Ace') {
-//         previousValue.filtered.push(currentValue);
-//     } else if (currentValue.value === 'Jack') {
-//         previousValue.filtered.push(currentValue);
-//     } else if (currentValue.value === 'Queen') {
-//         previousValue.filtered.push(currentValue);
-//     } else if (currentValue.value === 'King') {
-//         previousValue.filtered.push(currentValue);
-//     }
-//
-//     return previousValue;
-// }, {filtered:[]})
-//
-// console.log(red);
+ // let red = cards.reduce((previousValue, currentValue) => {
+ //     if (currentValue.cardSuit === 'clubs') {
+ //         if (currentValue.value >= 9) {
+ //             previousValue.filtered.push(currentValue);
+ //         } else if (currentValue.value === 'Joker') {
+ //             previousValue.filtered.push(currentValue);
+ //         } else if (currentValue.value === 'Ace') {
+ //             previousValue.filtered.push(currentValue);
+ //         } else if (currentValue.value === 'Jack') {
+ //             previousValue.filtered.push(currentValue);
+ //         } else if (currentValue.value === 'Queen') {
+ //             previousValue.filtered.push(currentValue);
+ //         } else if (currentValue.value === 'King') {
+ //             previousValue.filtered.push(currentValue);
+ //         }
+ //     }
+ //
+ //     return previousValue;
+ // }, {filtered:[]})
+ //
+ // console.log(red);
 
 // Додатково по reduce
 // Взяти описану колоду карт, та за допомоги редюсу попакувати всі карти по "мастях" в об'єкт
@@ -207,19 +209,19 @@
 //     clubs:[]
 // }
 
-// let reduce = cards.reduce((previousValue , currentValue) => {
-//
-//     if (currentValue.cardSuit === 'spades') {
-//         previousValue.spade.push(currentValue);
-//     } else if (currentValue.cardSuit === 'hearts') {
-//         previousValue.heart.push(currentValue);
-//     } else if (currentValue.cardSuit === 'diamonds') {
-//         previousValue.diamond.push(currentValue);
-//     } else if (currentValue.cardSuit === 'clubs') {
-//         previousValue.club.push(currentValue);
-//     }
-//     return previousValue;
-//
-// }, {spade:[], diamond:[], heart:[], club:[]})
-//
-// console.log(reduce);
+let reduce = cards.reduce((previousValue , currentValue) => {
+
+    if (currentValue.cardSuit === 'spades') {
+        previousValue.spade.push(currentValue);
+    } else if (currentValue.cardSuit === 'hearts') {
+        previousValue.heart.push(currentValue);
+    } else if (currentValue.cardSuit === 'diamonds') {
+        previousValue.diamond.push(currentValue);
+    } else if (currentValue.cardSuit === 'clubs') {
+        previousValue.club.push(currentValue);
+    }
+    return previousValue;
+
+}, {spade:[], diamond:[], heart:[], club:[]})
+
+console.log(reduce);
