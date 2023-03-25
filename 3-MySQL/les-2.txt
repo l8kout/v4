@@ -1,3 +1,68 @@
+# знайти всі машини старші за 2000 р.
+
+select * from cars where year > 2000;
+
+# знайти всі машини молодші 2015 р.
+
+select * from cars where year < 2015;
+
+# знайти всі машини 2008, 2009, 2010 років
+
+select * from cars where year between 2008 and 2010;
+
+# знайти всі машини не з цих років 2008, 2009, 2010
+
+select * from cars where year not in (2008, 2009, 2010);
+
+# знайти всі машини де year==price
+
+select * from cars where year = price;
+
+# знайти всі машини bmw старші за 2014 р.
+
+select * from cars where model = 'bmw' and year > 2014;
+
+# знайти всі машини audi молодші 2014 р.
+
+select * from cars where model = 'audi' and year < 2014;
+
+# знайти перші 5 машин
+
+select * from cars order by id limit 5;
+
+# знайти останні 5 машин
+
+select * from cars order by id desc limit 5;
+
+# знайти середнє арифметичне цін машини KIA
+
+select avg(price) from cars where model = 'kia';
+
+# знайти середнє арифметичне цін для кожної марки машин окремо
+
+select avg(price) as avg, model from cars group by model;
+
+# підрахувати кількість кожної марки
+select * from cars;
+select count(*) as count, model from cars group by model;
+
+# знайти марку машин кількість яких найбільше
+
+select count(model) as count, model from cars group by model order by count desc limit 1;
+
+# знайти марку машини в назві яких друга та передостання буква "a"
+select * from cars where model like '_a%a_';
+select * from cars;
+# знайти всі машини назва моделі яких більше за 8 символів
+select * from cars where length(model) > 8;
+#
+#
+# ***знайти машини ціна котрих більше ніж ціна середнього арифметичного всіх машин
+select avg(price) from cars;
+
+select * from cars where price > (select avg(price) as avg from cars);
+
+#----------------------------------------------------------------------
 # 1.Вибрати усіх клієнтів, чиє ім'я має менше ніж 6 символів.
 select * from client;
 select * from client where length(FirstName) < 6;
@@ -31,26 +96,59 @@ from client
          join department d on d.idDepartment = client.Department_idDepartment
 union
 select count(*) from client
-                join department d2 on d2.idDepartment = client.Department_idDepartment
-                where DepartmentCity ='lviv';
+                         join department d2 on d2.idDepartment = client.Department_idDepartment
+where DepartmentCity ='lviv';
 
 # 10.Знайти кредити, які мають найбільшу суму для кожного клієнта окремо.
 select * from application;
-select client.idClient, client.FirstName, client.LastName, a.Sum
-from client
-         join application a on client.idClient = a.Client_idClient;
 
+select max(Sum) as maxSum, c.idClient, c.FirstName, c.LastName from application
+    join client c on c.idClient = application.Client_idClient
+                                        group by Client_idClient;
 
 # 11. Визначити кількість заявок на крдеит для кожного клієнта.
-#
+
+select count(Client_idClient) as count, application.Client_idClient, c.FirstName, c.LastName  from application
+                                                        join client c on c.idClient = application.Client_idClient
+                                                        group by Client_idClient;
+
 # 12. Визначити найбільший та найменший кредити.
-#
+select max(Sum) as maxAndMin from application
+union
+select min(Sum) from application;
+
 # 13. Порахувати кількість кредитів для клієнтів,які мають вищу освіту.
-#
+select count(*) as count, idClient, LastName, FirstName from client
+         join application a on client.idClient = a.Client_idClient
+         where Education = 'high' group by idClient, LastName, FirstName;
+
+select count(*) from client where Education = 'high';
+
 # 14. Вивести дані про клієнта, в якого середня сума кредитів найвища.
-#
+
+select avg(Sum) as sum, c.* from application
+                                        join client c on c.idClient = application.Client_idClient
+                                        group by idClient order by idClient desc limit 1;
+
 # 15. Вивести відділення, яке видало в кредити найбільше грошей
-#
+select * from application;
+
+select sum(Sum) as sum, Client_idClient from application group by Client_idClient;
+
+select sum(sum) as Sum, d.DepartmentCity from application
+                join client c on c.idClient = application.Client_idClient
+                join department d on d.idDepartment = c.Department_idDepartment
+                group by Client_idClient order by Sum desc limit 1;
+
+
+select sum(Sum) as sum, idDepartment, DepartmentCity
+from department
+         join client c on department.idDepartment = c.Department_idDepartment
+         join application a on c.idClient = a.Client_idClient
+group by DepartmentCity, idDepartment
+order by sum desc
+limit 1;
+
 # 16. Вивести відділення, яке видало найбільший кредит.
 #
 # 17. Усім клієнтам, які мають вищу освіту, встановити усі їхні кредити у розмірі 6000 грн.
