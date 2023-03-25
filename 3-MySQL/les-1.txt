@@ -43,10 +43,21 @@ select avg(price) from cars where model = 'kia';
 select avg(price) as avg, model from cars group by model;
 
 # підрахувати кількість кожної марки
+select * from cars;
+select count(*) as count, model from cars group by model;
+
 # знайти марку машин кількість яких найбільше
-#
+
+select count(model) as count, model from cars group by model order by count desc limit 1;
+
 # знайти марку машини в назві яких друга та передостання буква "a"
+select * from cars where model like '_a%a_';
+select * from cars;
 # знайти всі машини назва моделі яких більше за 8 символів
+select * from cars where length(model) > 8;
 #
 #
 # ***знайти машини ціна котрих більше ніж ціна середнього арифметичного всіх машин
+select avg(price) from cars;
+
+select * from cars where price > (select avg(price) as avg from cars);
