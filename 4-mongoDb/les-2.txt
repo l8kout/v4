@@ -168,7 +168,7 @@ db.students.aggregate([
         }
     }
 ])
-
+//
 // ********** Не працюючих батьків влаштувати офіціантами (підказка: гуглимо "arrayFilters")
 db.students.updateMany(
     {parents:{$exists:1}, 'parents.profession':null},
